@@ -15,10 +15,43 @@
 ### Mutabilty
 
 ```javascript
+// Ex. 1
 var david = {
   name: 'David VanDusen',
   email: 'david@lighthouselabs.ca'
 };
+
+console.log(typeof david.whatever === undefined); // logs true since david object does not have a property with key whatever...yet;)
+
+david.whatever = 'meh'; //mutating the object david
+
+console.log(typeof david.whatever === undefined); // now this logs false; david has been mutated
+
+// Ex. 2
+var someNumber = 42;
+var result = someNumber + 11;
+
+var otherNumber = someNumber;
+
+console.log(someNumber === otherNumber); // logs `true`
+
+someNumber = someNumber + 13; //this is not mutating the number 42, rather reassigning the result 55 into the variable someNumber
+
+console.log(someNumber === otherNumber); // logs `false` someNumber is now a different number
+
+
+//Ex. 3
+var peter = {
+  superhuman: false;
+}
+
+var spidey = peter;
+
+console.log(peter === spidey); // logs true as expected
+
+spidey.superhuman = true; // mutating the object
+
+console.log(peter === spidey); // still logs true since objects peter and spider are still the same object and has only been mutated
 
 ```
 
